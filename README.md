@@ -1,46 +1,91 @@
-# Getting Started with Create React App
+# **React Rental Listings Application**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Это приложение на React позволяет пользователям искать квартиры для аренды с возможностью фильтрации по дате заезда, количеству ночей и количеству гостей. В проекте используются технологии React, Redux, MUI и date-fns.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## **Функциональность**
 
-### `npm start`
+### **Список квартир:**
+- Показ всех доступных квартир с пагинацией по 10 записей на странице.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### **Фильтры:**
+- Поиск по дате заезда (только будущие даты).
+- Поиск по количеству ночей (минимум 1).
+- Поиск по количеству гостей (минимум 1).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### **Карточка квартиры:**
+- Возможность просмотра подробной информации о выбранной квартире.
 
-### `npm test`
+### **Сохранение фильтров:**
+- Фильтры сохраняются при переходе на карточку квартиры и возврате назад.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## **Технологии**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React**: Библиотека для построения пользовательского интерфейса.
+- **Redux Toolkit**: Для управления состоянием приложения.
+- **MUI**: Для стилизации компонентов и создания удобного интерфейса.
+- **Axios**: Для выполнения HTTP-запросов к API.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## **Установка**
 
-### `npm run eject`
+### **1. Склонируйте репозиторий**
+```bash
+git clone https://github.com/gremwiz1/rental-list.git
+```
+### **2. Перейдите в папку клиентской части**
+```bash
+cd rental-list/client
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### **Клиентская часть (Frontend)**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### **1. Установите зависимости**
+```bash
+npm install
+```
+#### **2. Запустите клиентское приложение**
+```bash
+npm start
+```
+По умолчанию клиент работает на порту `3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## **Серверная часть (Backend)**
 
-## Learn More
+#### **1. Перейдите в папку сервера**
+```bash
+cd ./server
+```
+#### **2. Установите зависимости**
+```bash
+npm install
+```
+#### **3. Запустите сервер**
+```bash
+node proxyServer.js
+```
+Сервер будет работать на порту `5000`. Если порт занят, проверьте, какой процесс его использует, и освободите порт перед запуском.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## **Основные компоненты**
+
+### **Filters**
+Компонент для фильтрации квартир. Поддерживает:
+- Выбор даты заезда (ограничен текущей и будущими датами).
+- Указание количества ночей.
+- Указание количества гостей.
+
+### **RentalList**
+Компонент для отображения списка квартир:
+- Пагинация осуществляется на клиентской стороне (по 10 записей на странице).
+- Данные фильтруются при изменении параметров.
+
+### **RentalCard**
+Компонент для отображения информации о квартире в виде карточки.
