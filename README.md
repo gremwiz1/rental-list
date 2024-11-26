@@ -39,7 +39,7 @@ git clone https://github.com/gremwiz1/rental-list.git
 ```
 ### **2. Перейдите в папку клиентской части**
 ```bash
-cd rental-list/client
+cd rental-list
 ```
 
 ### **Клиентская часть (Frontend)**
